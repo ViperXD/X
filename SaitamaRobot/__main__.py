@@ -208,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                      [
                         InlineKeyboardButton(
                             text=" ✨ Help ",
-                            url="https://t.me/SenkuRobot?start=help"),
+                            url="https://t.me/midukkirashmika2_bot?start=help"),
                          InlineKeyboardButton(
                             text=" ⚡️ Group ",
                              url="https://t.me/focusmoviess")        
