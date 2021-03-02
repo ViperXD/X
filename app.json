@@ -174,7 +174,12 @@
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
          "required": false,
          "value": ""
-      }
+      },
+        "API_OPENWEATHER": {
+              "description": "Open weather Api.",
+              "required": "true",
+              "value": ""
+        }
       
    }
 }
