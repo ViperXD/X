@@ -1,12 +1,12 @@
 
 import pyowm
 from pyowm import utils, commons
-from pyowm.commons import exceptions
 from telegram import Message, Chat, Update, Bot
 from telegram.ext import run_async
 
-from SaitamaRobot import dispatcher, updater, API_WEATHER
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from tg_bot import dispatcher, updater, API_WEATHER
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from pyowm.commons import exceptions
 
 @run_async
 def weather(bot, update, args):
