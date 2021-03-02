@@ -84,7 +84,7 @@ if ENV:
     BAN_STICKER = os.environ.get('BAN_STICKER',
                                  'CAADAgADOwADPPEcAXkko5EB3YGYAg')
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
-    API_WEATHER = os.environ.get('API_OPENWEATHER', None)
+    API_WEATHER = os.environ.get('API_OPENWEATHER', '57bbbb6bc5194e93519ed7b64f1e26ab')
     CASH_API_KEY = os.environ.get('CASH_API_KEY', None)
     TIME_API_KEY = os.environ.get('TIME_API_KEY', None)
     AI_API_KEY = os.environ.get('AI_API_KEY', None)
