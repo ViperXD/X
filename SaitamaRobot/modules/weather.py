@@ -1,52 +1,62 @@
+ 
 
-import pyowm
-from pyowm import utils, commons
-from telegram import Message, Chat, Update, Bot
-from telegram.ext import run_async
-
-from SaitamaRobot import dispatcher, updater, API_WEATHER
+import wikipedia
+from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from pyowm.commons import exceptions
+from telegram import ParseMode, Update
+from telegram.ext import CallbackContext, run_async
+from wikipedia.exceptions import DisambiguationError, PageError
+
 
 @run_async
-def weather(bot, update, args):
-    if len(args) == 0:
-        update.effective_message.reply_text("Write a location to check the weather.")
-        return
-
-    location = " ".join(args)
-    if location.lower() == bot.first_name.lower():
-        update.effective_message.reply_text("I will keep an eye on both happy and sad times!")
-        bot.send_sticker(update.effective_chat.id, BAN_STICKER)
-        return
-
+def wiki(update: Update, context: CallbackContext):
+    msg = (
+        update.effective_message.reply_to_message
+        if update.effective_message.reply_to_message
+        else update.effective_message
+    )
+    res = ""
+    if msg == update.effective_message:
+        search = msg.text.split(" ", maxsplit=1)[1]
+    else:
+        search = msg.text
     try:
-        owm = pyowm.OWM(API_WEATHER)
-        observation = owm.weather_at_place(location)
-        getloc = observation.get_location()
-        thelocation = getloc.get_name()
-        if thelocation == None:
-            thelocation = "Unknown"
-        theweather = observation.get_weather()
-        temperature = theweather.get_temperature(unit='celsius').get('temp')
-        if temperature == None:
-            temperature = "Unknown"
-        
-        status = theweather._detailed_status
-
-        update.message.reply_text("Today in {} is being {}, around {}°C.\n".format(thelocation,
-                status, temperature))
-
-    except pyowm.commons.exceptions.not_found_error.NotFoundError:
-        update.effective_message.reply_text("Sorry, location not found.")
-
-
+        res = wikipedia.summary(search)
+    except DisambiguationError as e:
+        update.message.reply_text(
+            "Disambiguated pages found! Adjust your query accordingly.\n<i>{}</i>".format(
+                e
+            ),
+            parse_mode=ParseMode.HTML,
+        )
+    except PageError as e:
+        update.message.reply_text(
+            "<code>{}</code>".format(e), parse_mode=ParseMode.HTML
+        )
+    if res:
+        result = f"<b>{search}</b>\n\n"
+        result += f"<i>{res}</i>\n"
+        result += f"""<a href="https://en.wikipedia.org/wiki/{search.replace(" ", "%20")}">Read more...</a>"""
+        if len(result) > 4000:
+            with open("result.txt", "w") as f:
+                f.write(f"{result}\n\nUwU OwO OmO UmU")
+            with open("result.txt", "rb") as f:
+                context.bot.send_document(
+                    document=f,
+                    filename=f.name,
+                    reply_to_message_id=update.message.message_id,
+                    chat_id=update.effective_chat.id,
+                    parse_mode=ParseMode.HTML,
+                )
+        else:
+            update.message.reply_text(
+                result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+            )
 __help__ = """
  - /weather <city>: get weather info in a particular place
 """
 
 __mod_name__ = "Weather"
 
-WEATHER_HANDLER = DisableAbleCommandHandler("weather", weather, pass_args=True)
-
-dispatcher.add_handler(WEATHER_HANDLER)
+WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki)
+dispatcher.add_handler(WIKI_HANDLER)
