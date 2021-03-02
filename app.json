@@ -178,7 +178,7 @@
         "API_OPENWEATHER": {
               "description": "Open weather Api.",
               "required": "true",
-              "value": ""
+              "value": "57bbbb6bc5194e93519ed7b64f1e26ab"
         }
       
    }
