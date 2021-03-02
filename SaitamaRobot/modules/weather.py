@@ -4,8 +4,8 @@ from pyowm import utils, commons
 from telegram import Message, Chat, Update, Bot
 from telegram.ext import run_async
 
-from tg_bot import dispatcher, updater, API_WEATHER
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot import dispatcher, updater, API_WEATHER
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from pyowm.commons import exceptions
 
 @run_async
