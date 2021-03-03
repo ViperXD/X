@@ -50,3 +50,4 @@ validators
 youtube_dl
 html2text
 wikipedia
+bing-image-downloader
