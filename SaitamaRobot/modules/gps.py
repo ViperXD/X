@@ -1,7 +1,7 @@
 import os
 from SaitamaRobot import client
 from geopy.geocoders import Nominatim
-from Elizabeth.events import register
+from SaitamaRobot.event import register
 from SaitamaRobot import *
 from telethon import *
 from telethon.tl import *
