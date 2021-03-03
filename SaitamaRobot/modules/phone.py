@@ -6,7 +6,7 @@ import time
 import urllib
 import os
 
-from SatamaRobot import telethn
+from SaitamaRobot import telethn
 from SaitamaRobot.event import register
 
 async def is_register_admin(chat, user):
