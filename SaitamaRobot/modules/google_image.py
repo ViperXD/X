@@ -3,7 +3,7 @@ import os
 import shutil
 import glob
 from re import findall
-from bing_image_downloader import downloader
+from bing-image-downloader import downloader
 from telethon import *
 from telethon.tl import functions
 from telethon.tl import types
