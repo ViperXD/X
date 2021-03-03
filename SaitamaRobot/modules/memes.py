@@ -8,9 +8,9 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, run_async
 from telegram.utils.helpers import escape_markdown
 
-import Elizabeth.modules.helper_funcs.fun_strings as fun
-from Elizabeth import DEV_USERS, LOGGER, DEMONS, DRAGONS, TIGERS, WOLVES, dispatcher
-from Elizabeth.modules.disable import (
+import SaitamaRobot.modules.helper_funcs.fun_strings as fun
+from SaitamaRobot import DEV_USERS, LOGGER, DEMONS, DRAGONS, TIGERS, WOLVES, dispatcher
+from SaitamaRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
