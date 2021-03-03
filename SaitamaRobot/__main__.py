@@ -57,8 +57,7 @@ I am the group management bot of FOCUS MOVIES .. You guys can't use me or add me
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm Dr Stone & I help admins to manage their groups! Have a look at the following for an idea of some of \
-the things I can help you with.
+I am exlusively made for FOCUS MOVIES Group and You cannot add me to your groups....You can use me either by / or ! command
 
 *Main* commands available:
  • /help: PM's you this message.
