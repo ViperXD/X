@@ -179,6 +179,11 @@
               "description": "Open weather Api.",
               "required": "true",
               "value": "57bbbb6bc5194e93519ed7b64f1e26ab"
+        },
+        "TEMP_DOWNLOAD_DIRECTORY": {
+        "description": "Default location for the downloaded items",
+        "required": "true",
+        "value": "./Downloads"
         }
       
    }
