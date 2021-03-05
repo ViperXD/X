@@ -124,7 +124,7 @@ __help__ = """
 
 __mod_name__ = "dogbin"
 
-PASTE_HANDLER = DisableAbleCommandHandler("dogpastepaste", dogpastepaste, pass_args=True)
+PASTE_HANDLER = DisableAbleCommandHandler("dogpaste", dogpaste, pass_args=True)
 GET_PASTE_HANDLER = DisableAbleCommandHandler("getpaste", get_paste_content, pass_args=True)
 PASTE_STATS_HANDLER = DisableAbleCommandHandler("pastestats", get_paste_stats, pass_args=True)
 
