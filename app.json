@@ -76,12 +76,12 @@
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
          "required": true,
-         "value": "-xyz"
+         "value": ""
       },
       "TIME_API_KEY": {
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
-         "value": "-xyz"
+         "value": ""
       },
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Saitama support then keep the current ID's here at they are and add yours.",
@@ -181,7 +181,9 @@
         "value": "./DOWNLOADS"
       },
         "API_OPENWEATHER": {
-        "description": "Get this value from https://openweathermap.org/api for the weather module to work"
+        "description": "Get this value from https://openweathermap.org/api for the weather module to work",
+        "required": "true",
+        "value": ""
         }
       
    }
