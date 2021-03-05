@@ -179,6 +179,9 @@
         "description": "Default location for the downloaded items",
         "required": "true",
         "value": "./DOWNLOADS"
+      },
+        "API_OPENWEATHER": {
+        "description": "Get this value from https://openweathermap.org/api for the weather module to work"
         }
       
    }
