@@ -1,5 +1,5 @@
 from telegram import ParseMode, Update, Bot
-from telegram.ext import run_async
+from telegram.ext import run_async, CallbackContext
 
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot import dispatcher
@@ -8,7 +8,7 @@ from requests import get
 
 
 @run_async
-def github(bot: Bot, update: Update):
+def github(bot: Bot, update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text[len('/git '):]
     usr = get(f'https://api.github.com/users/{text}').json()
