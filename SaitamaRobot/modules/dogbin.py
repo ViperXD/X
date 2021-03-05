@@ -9,8 +9,8 @@ from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot import dispatcher
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
 BASE_URL = 'https://del.dog'
 
