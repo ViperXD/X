@@ -97,8 +97,6 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://static.alphacoders.com/desktops/21077.jpg"
-
 DONATE_STRING = """Heya, glad to hear you want to donate!
 There is only one way of supporting him;[PAYPAL](https://t.me/vkprojects/5) ."""
 
