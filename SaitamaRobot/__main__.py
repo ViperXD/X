@@ -76,12 +76,11 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am the group management bot of FOCUS MOVIES .. You guys can't use me or add me to groups.........
+I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.My future updates will be put into This Channel - @VKPROJECTS .
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I am exlusively made for FOCUS MOVIES Group and You cannot add me to your groups....You can use me either by / or ! command
 
 *Main* commands available:
  • /help: PM's you this message.
@@ -101,9 +100,7 @@ And the following:
 SAITAMA_IMG = "https://static.alphacoders.com/desktops/21077.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-RASHMIKA is hosted on one of Heroku's Servers and doesn't require any donations as of now but \
-You can donate to the original writer of the Base code, ALEN TL
-There is only one way of supporting him; [PayPal](paypal.me/ALENTL) ."""
+There is only one way of supporting him;[PAYPAL](https://t.me/vkprojects/5) ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -221,26 +218,18 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text=" 👑 Summon Me ",
+                            text=" 🎉 Add Me To Your Group ",
                             url="t.me/{}?startgroup=true".format(
-                                context.bot.username)),
-                         InlineKeyboardButton(
-                             text=" 🔔 Channel ",
-                             url="https://t.me/focusgrpchannel")
+                                context.bot.username))
+                    
                      ],
                      [
                         InlineKeyboardButton(
-                            text=" ✨ Help ",
-                            url="https://t.me/midukkirashmika2_bot?start=help"),
+                            text=" ✨CHANNEL ",
+                            url="https://t.me/VKPROJECTS"),
                          InlineKeyboardButton(
                             text=" ⚡️ Group ",
-                             url="https://t.me/focusmoviess")        
-                       
-                     ],
-                     [
-                        InlineKeyboardButton(
-                             text=" ❤️ Source Code ",
-                             url="https://github.com/ALENTL/FM-RASHMIKABOT")
+                             url="https://t.me/VKP_BOTS")
                     
                     ]]))
     else:
